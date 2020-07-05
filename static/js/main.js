@@ -10,8 +10,9 @@ const keyPlay = function(event) {
     event.target.style.backgroundColor = "#6df0c2";
 };
 
-
-
+const keyReturn = function(event) {
+    event.target.style.backgroundColor = '';
+}
 // Write a named function with event handler properties
 
 
