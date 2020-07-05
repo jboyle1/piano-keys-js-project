@@ -1,6 +1,9 @@
 // The keys and notes variables store the piano keys
+
 const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
+
 const notes = [];
+
 keys.forEach(function(key){
   notes.push(document.getElementById(key));
 })
@@ -31,20 +34,24 @@ let eventAssignment = function(note) {
 notes.forEach(eventAssignment);
 
 // These variables store the buttons that progress the user through the lyrics
+
 let nextOne = document.getElementById('first-next-line');
 let nextTwo = document.getElementById('second-next-line');
 let nextThree = document.getElementById('third-next-line');
 let startOver = document.getElementById('fourth-next-line');
 
 // This variable stores the '-END' lyric element
+
 let lastLyric = document.getElementById('column-optional');
 
 // These statements are "hiding" all the progress buttons, but the first one
+
 nextTwo.hidden = true;
 nextThree.hidden = true;
 startOver.hidden= true;
 
 // Write anonymous event handler property and function for the first progress button
+
 nextOne.onclick = function() {
     nextTwo.hidden = false;
     nextOne.hidden = true;
@@ -55,11 +62,22 @@ nextOne.onclick = function() {
 
 // Write anonymous event handler property and function for the second progress button
 
+nextTwo.onclick = function() {
+    nextThree.hidden = false;
+    nextTwo.hidden = true;
+
+    document.getElementById('word-five').innerHTML = 'DEAR';
+    document.getElementById('word-six').innerHTML = 'FRI-';
+
+    lastLyric.style.display = 'inline-block';
+}
 
 // Write anonymous event handler property and function for the third progress button
 
 
+
 // This is the event handler property and function for the startOver button
+
 startOver.onclick = function() {
   nextOne.hidden = false;
   startOver.hidden = true;
